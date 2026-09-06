@@ -1,8 +1,8 @@
 'use strict'
 
 const mongoose = require('mongoose')
-
-const connectString = `mongodb://localhost:27017/shopDev`
+const { countConnects } = require("../helpers/check.connects")
+const connectString = `mongodb://127.0.0.1:27017/shopDev`
 
 // Singleton Pattern : Đảm bảo một class chỉ có một instance trong toàn bộ application.
 class Database {
@@ -14,7 +14,7 @@ class Database {
         if (1 === 1) {
             mongoose.set('debug', { color: true })
         }
-        mongoose.connect(connectString).then(_ => console.log(`Connected Mongodb success`)).catch(err => console.log(`Error connect: ${err}`))
+        mongoose.connect(connectString).then(_ => console.log(`Connected Mongodb success: ${countConnects()}`)).catch(err => console.log(`Error connect: ${err}`))
     }
     // static nghĩa là method này thuộc về class, không thuộc về object.
     static getInstance() {
