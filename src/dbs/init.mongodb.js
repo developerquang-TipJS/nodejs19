@@ -2,7 +2,10 @@
 
 const mongoose = require('mongoose')
 const { countConnects } = require("../helpers/check.connects")
-const connectString = `mongodb://127.0.0.1:27017/shopDev`
+const { db: { host, port, name } } = require("../configs/config.mongodb")
+
+const connectString = `mongodb://${host}:${port}/${name}`
+console.log(`connectString: ${connectString}`)
 
 // Singleton Pattern : Đảm bảo một class chỉ có một instance trong toàn bộ application.
 class Database {
