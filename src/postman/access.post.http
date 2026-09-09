@@ -6,7 +6,7 @@ Content-Type: application/json
 x-api-key: 09f212b34928e7586430d739a614c6ed23ec6ea8f92bf58f449dccf21c38e945243b246da7dfa1bd3d58b65b946bdc74341b172f1fee013dee45cd204962ac93
 
 {
-    "name" : "Shop QuangDev 04",
-    "email" : "shopquangdev04@gmail.com",
-    "password" : "quang1235613"
+    "name" : "Shop QuangDev 06",
+    "email" : "shopquangdev06@gmail.com",
+    "password" : "quang1235613123"
 }
