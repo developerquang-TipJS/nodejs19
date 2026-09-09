@@ -1,6 +1,7 @@
 'use strict'
 
 const JWT = require('jsonwebtoken')
+const { BadRequestError } = require('../core/error.response')
 
 const createTokenPair = async (payload, puclicKey, privateKey) => {
     try {
@@ -24,11 +25,7 @@ const createTokenPair = async (payload, puclicKey, privateKey) => {
 
         return {accessToken,refreshToken}
     } catch (error) {
-        return {
-            code: 'xxxx',
-            message: error.message,
-            status: 'error-create-token'
-        }
+        throw new BadRequestError("Error: create tokens pair failed!")
     }
 }
 

@@ -1,5 +1,6 @@
 'use strict'
 
+const { BadRequestError } = require("../core/error.response")
 const keytokenModel = require("../models/keytoken.model")
 
 class KeytokenService {
@@ -12,11 +13,7 @@ class KeytokenService {
 
             return newKeyToken ? newKeyToken.publicKey : null
         } catch (error) {
-            return {
-                code: 'xxx-keyToken',
-                message: error.message,
-                status: 'error-create-keyToken'
-            }
+            throw new BadRequestError("Error: create keyToken public failed!")
         }
     }
 }

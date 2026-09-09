@@ -8,7 +8,7 @@ const router = express.Router()
 // Check api key
 router.use(apiKey)
 // Check permission
-router.use(permission('123'))
+router.use(permission('0000'))
 
 router.use('/v1/api', require('./access'))
 
