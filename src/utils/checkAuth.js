@@ -10,6 +10,7 @@ const HEADER = {
 const apiKey = async (req,res,next) => {
     try {
         const key = req.headers[HEADER.API_KEY]?.toString()
+        console.log("key: ",key)
         if(!key) {
             throw new BadRequestError("Error: notexist-api-key-in-header-request!")
         }

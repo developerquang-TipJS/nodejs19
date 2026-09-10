@@ -3,10 +3,10 @@
 ### sign up
 POST {{url_dev}}/shop/signup
 Content-Type: application/json
-x-api-key: 09f212b34928e7586430d739a614c6ed23ec6ea8f92bf58f449dccf21c38e945243b246da7dfa1bd3d58b65b946bdc74341b172f1fee013dee45cd204962ac93
+x-api-key: d22131361037905b74388a3215b5078b0de51a37c3190af24b973bcc4afc4b6e75b3ffeaea5e5fcd34245d8877df0eea20d43ab2c311bd7a530dc0a817df2afc
 
 {
-    "name" : "Shop QuangDev 06",
-    "email" : "shopquangdev06@gmail.com",
+    "name" : "Shop QuangDev 07",
+    "email" : "shopquangdev07@gmail.com",
     "password" : "quang1235613123"
 }
