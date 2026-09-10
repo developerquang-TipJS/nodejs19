@@ -1,9 +1,9 @@
-'user strict'
+'use strict'
 
 const {Schema, model} = require('mongoose')
 
 const DOCUMENT_NAME = 'Apikey'
-const COLLECTION_NAME = 'Apikeys'
+const COLLECTION_NAME = 'ApiKeys'
 
 const apikeySchema = new Schema({
     key: {

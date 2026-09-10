@@ -4,7 +4,7 @@ const { BadRequestError } = require("../core/error.response")
 const keytokenModel = require("../models/keytoken.model")
 
 class KeytokenService {
-    static createKeyToken = async ({shopId, publicKey,refreshToken}) => {
+    static createKeyToken = async ({ shopId, publicKey, refreshToken }) => {
         try {
             // lv 0
             // const publicKeyString = publickey.toString()
@@ -14,18 +14,18 @@ class KeytokenService {
 
             // return newKeyToken ? newKeyToken.publicKey : null
             // lv xxx
-            const filter = { shop: shopId}
+            const filter = { shop: shopId }
             const update = {
                 publicKey,
-                refreshTokensUsed : [],
+                refreshTokensUsed: [],
                 refreshToken
             }
             const options = {
                 upsert: true,
                 new: true
             }
-            const tokens = await keytokenModel.findOneAndUpdate(filter,update,options)
-
+            const tokens = await keytokenModel.findOneAndUpdate(filter, update, options)
+            console.log("tokens::::::: ", tokens)
             return tokens ? tokens.publicKey : null
         } catch (error) {
             throw new BadRequestError("Error: create keyToken public failed!")

@@ -4,10 +4,11 @@ const { CREATED, SuccessResponse } = require("../core/success.response")
 const AccessService = require("../services/access.service")
 
 class AccessController {
-    login = async (req,res,next) => {
+    login = async (req, res, next) => {
+        console.log("controller login")
         new SuccessResponse({
             metadata: await AccessService.login(req.body)
-        })
+        }).send(res)
     }
     signUp = async (req, res, next) => {
         new CREATED({

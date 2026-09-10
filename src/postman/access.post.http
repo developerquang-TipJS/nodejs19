@@ -3,10 +3,20 @@
 ### sign up
 POST {{url_dev}}/shop/signup
 Content-Type: application/json
-x-api-key: d22131361037905b74388a3215b5078b0de51a37c3190af24b973bcc4afc4b6e75b3ffeaea5e5fcd34245d8877df0eea20d43ab2c311bd7a530dc0a817df2afc
+x-api-key: 96302a35ff65110ad4992df0f05e5c7148a000be1bc9111eb2312eab83b1446342f4adcf73cc7222d05d7c91ada785275f2566e998f097116013bb896e8e05d4
 
 {
-    "name" : "Shop QuangDev 07",
-    "email" : "shopquangdev07@gmail.com",
+    "name" : "Shop QuangDev1",
+    "email" : "shopquangdev1@gmail.com",
+    "password" : "quang1235613123"
+}
+
+### login
+POST {{url_dev}}/shop/login
+Content-Type: application/json
+x-api-key: 96302a35ff65110ad4992df0f05e5c7148a000be1bc9111eb2312eab83b1446342f4adcf73cc7222d05d7c91ada785275f2566e998f097116013bb896e8e05d4
+
+{
+    "email" : "shopquangdev1@gmail.com",
     "password" : "quang1235613123"
 }
