@@ -11,7 +11,7 @@ const ReasonStatusCode = {
     FORBIDDEN: 'Bad request error',
     CONFLICT: 'Conflict error',
     UNAUTHORIZED: 'authorized error',
-    NOT_FOUND: 'Not found error'
+    NOT_FOUND: 'Not found error',
 }
 
 class ErrorResponse extends Error {

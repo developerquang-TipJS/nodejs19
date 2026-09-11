@@ -4,7 +4,7 @@ const shopModel = require('../models/shop.model')
 const bcrypt = require('bcrypt')
 const crypto = require('crypto')
 const KeytokenService = require('./keytoken.service')
-const { createTokenPair } = require('../utils/auth')
+const { createTokenPair,verifyJWT } = require('../utils/auth')
 const { getInforData } = require('../utils')
 const { BadRequestError, AuthFailureError } = require('../core/error.response')
 const { findByEmail } = require('./shop.service')
@@ -98,8 +98,50 @@ class AccessService {
 
     static logout = async ({keyStore}) => {
         const delKey = await KeytokenService.removeKeyById(keyStore._id)
-        console.log({delKey})
         return delKey
+    }
+
+    static handleRefreshToken = async (refreshToken) => {
+        const foundToken = await KeytokenService.findByRefreshTokenUsed(refreshToken)
+        console.log("foundToken:::",foundToken)
+        if(foundToken) {
+            const {shopId,email} = await verifyJWT(refreshToken,foundToken.publicKey)
+            await KeytokenService.deleteById(shopId)
+            throw new BadRequestError('Something wrong happend !! pls relogin')
+        }
+        const holderToken = await KeytokenService.findByRefreshToken(refreshToken)
+        if(!holderToken) throw new AuthFailureError('Shop is not registeted')
+        const publicKeyObject = crypto.createPublicKey(holderToken.publicKey)
+        console.log("publicKeyObject:::",publicKeyObject)
+
+        const {shopId,email} = await verifyJWT(refreshToken,publicKeyObject)
+
+        const foundShop = await findByEmail({email})
+        if(!foundShop) throw new AuthFailureError('Shop is not registeted')
+
+        const { privateKey, publicKey } = crypto.generateKeyPairSync('rsa', {
+            modulusLength: 4096,
+            publicKeyEncoding: {
+                type: 'pkcs1',
+                format: 'pem'
+            },
+            privateKeyEncoding: {
+                type: 'pkcs1',
+                format: 'pem'
+            }
+        })
+        const tokens = await createTokenPair({ shopId: shopId, email:email }, publicKey, privateKey)
+        await KeytokenService.updateRefreshToken({
+            _id: holderToken._id,
+            publicKey,
+            refreshToken: tokens.refreshToken,
+            refreshTokenUsed: refreshToken
+        })
+
+        return {
+            shop: {shopId,email},
+            tokens
+        }
     }
 }
 

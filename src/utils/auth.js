@@ -5,6 +5,8 @@ const { BadRequestError, AuthFailureError, NotFoundError } = require('../core/er
 const { asyncHandler } = require('.')
 const {HEADER} = require('../const/index')
 const { findByShopId } = require('../services/keytoken.service')
+const crypto = require('crypto')
+
 const createTokenPair = async (payload, puclicKey, privateKey) => {
     try {
         const accessToken = await JWT.sign(payload,privateKey, {
@@ -40,9 +42,10 @@ const authentication = asyncHandler(async (req,res,next) => {
     
     const accessToken = req.headers[HEADER.AUTHORIZATION]
     if(!accessToken) throw new AuthFailureError("Invalid accesstoken")
-    
+    const publicKeyObject = crypto.createPublicKey(keyStore.publicKey)
+    console.log('authentication: ',keyStore)
     try {
-        const decodeShop = JWT.verify(accessToken,keyStore.publicKey)
+        const decodeShop = JWT.verify(accessToken,publicKeyObject)
         if(shopId !== decodeShop.shopId) throw new AuthFailureError("Invalid verify shopId")
         req.keyStore = keyStore
         return next()
@@ -50,7 +53,13 @@ const authentication = asyncHandler(async (req,res,next) => {
         next(error)
     }
 })
+
+const verifyJWT = async (token,keySecret) => {
+    return await JWT.verify(token,keySecret)
+}
+
 module.exports = {
     createTokenPair,
-    authentication
+    authentication,
+    verifyJWT
 }
