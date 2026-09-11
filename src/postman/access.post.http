@@ -3,18 +3,30 @@
 ### sign up
 POST {{url_dev}}/shop/signup
 Content-Type: application/json
-x-api-key: 96302a35ff65110ad4992df0f05e5c7148a000be1bc9111eb2312eab83b1446342f4adcf73cc7222d05d7c91ada785275f2566e998f097116013bb896e8e05d4
+x-api-key: 09f212b34928e7586430d739a614c6ed23ec6ea8f92bf58f449dccf21c38e945243b246da7dfa1bd3d58b65b946bdc74341b172f1fee013dee45cd204962ac93
 
 {
-    "name" : "Shop QuangDev1",
-    "email" : "shopquangdev1@gmail.com",
+    "name" : "Shop QuangDev2",
+    "email" : "shopquangdev2@gmail.com",
     "password" : "quang1235613123"
 }
 
 ### login
 POST {{url_dev}}/shop/login
 Content-Type: application/json
-x-api-key: 96302a35ff65110ad4992df0f05e5c7148a000be1bc9111eb2312eab83b1446342f4adcf73cc7222d05d7c91ada785275f2566e998f097116013bb896e8e05d4
+x-api-key: d22131361037905b74388a3215b5078b0de51a37c3190af24b973bcc4afc4b6e75b3ffeaea5e5fcd34245d8877df0eea20d43ab2c311bd7a530dc0a817df2afc
+
+{
+    "email" : "shopquangdev2@gmail.com",
+    "password" : "quang1235613123"
+}
+
+### login
+POST {{url_dev}}/shop/logout
+Content-Type: application/json
+x-api-key: d22131361037905b74388a3215b5078b0de51a37c3190af24b973bcc4afc4b6e75b3ffeaea5e5fcd34245d8877df0eea20d43ab2c311bd7a530dc0a817df2afc
+x-client-id: 6aa38000e31d3de300fd71ab
+authorization: eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzaG9wSWQiOiI2YWEzODAwMGUzMWQzZGUzMDBmZDcxYWIiLCJlbWFpbCI6InNob3BxdWFuZ2RldjJAZ21haWwuY29tIiwiaWF0IjoxNzg5MTAwMDM1LCJleHAiOjE3ODkyNzI4MzV9.jr_GOY8pprxTmRGKo4HJdIy6z_KBQcGMMghKLclgiSEvYaf4g0s3iXxiREIgur-Oy2TI1D2k0SvnCaBOi0YF84ewI8BNP_lKRcfpH4qVYtwfWiMqHnfc5YyISkzgQ34uKSPNjBZlXd01FCWXK2J-mwz2m4pbinRWXvUWuhE-qYGrHQ350JVOvLDQ9xdatKCUoiKczCATi5TKXL93QwHKMKr6jHEagIS4MLdxiymI8fBucxozI6O1WJAx3w0-ppdW4WWpbL_sCLjwNy6CWwtjlkZbUSrza1w2i-pm7sgpu_nkZbD4FjV9yiVtlGBXnD630Gx1ND8C2arjBXj3-iuJG7rkp1JYoTQG9giF6-Wui-hTCDMnH16tS63MW3qpzpcKEaJfgqW6TiqH1arXjiQtGTZwjqQb1tl8Z8Xr78B36mG9I9WVeKCP29ahQjyFNFJoCCkcf1XU36GYBTKHD1-7Z8ToDTyNnNiYhKwzsIHp0Zjm2HYDg0yw_KYwtT-0ufWLKTR5ESHfMDczQK6ld3Sm1gtk5Kh7x69nfNKv0auWS8pM0V3GhXMTH5Iq7H406zLxBPCpJ8aj_eZXz9bJZ8WzLYivrgzC0JW6wCaVfTjqhGRDudseL9SAxm519SQODrOoaN-ZkKry4ct1-u4YEdKRQJT9YY6S53ez5YcL6VSyVBA
 
 {
     "email" : "shopquangdev1@gmail.com",

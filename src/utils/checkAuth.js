@@ -1,12 +1,10 @@
 'use strict'
 
+const { HEADER } = require("../const")
 const { BadRequestError } = require("../core/error.response")
 const { findById } = require("../services/apikey.service")
 
-const HEADER = {
-    API_KEY : 'x-api-key',
-    AUTHORIZATION : 'authorization'
-}
+
 const apiKey = async (req,res,next) => {
     try {
         const key = req.headers[HEADER.API_KEY]?.toString()
@@ -22,7 +20,7 @@ const apiKey = async (req,res,next) => {
 
         return next()
     } catch (error) {
-        throw new BadRequestError("Error: api-key!")
+        next(error)
     }
 }
 

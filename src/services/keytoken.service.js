@@ -1,5 +1,6 @@
 'use strict'
 
+const { Types } = require("mongoose")
 const { BadRequestError } = require("../core/error.response")
 const keytokenModel = require("../models/keytoken.model")
 
@@ -39,6 +40,12 @@ class KeytokenService {
         } catch (error) {
             throw new BadRequestError("Error: get keyToken public failed!")
         }
+    }
+    static findByShopId = async ({shopId}) => {
+        return await keytokenModel.findOne({shop: new Types.ObjectId(shopId)}).lean()
+    }
+    static removeKeyById = async (id) => {
+        return await keytokenModel.deleteOne({ _id: id })
     }
 }
 
