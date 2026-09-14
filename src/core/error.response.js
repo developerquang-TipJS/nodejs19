@@ -1,9 +1,9 @@
 'use strict'
 
 const StatusCode = {
-    FORBIDDEN: 403,
+    FORBIDDEN: 400,
     CONFLICT: 409,
-    UNAUTHORIZED: 402,
+    UNAUTHORIZED: 401,
     NOT_FOUND: 404
 }
 

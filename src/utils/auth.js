@@ -34,7 +34,7 @@ const createTokenPair = async (payload, puclicKey, privateKey) => {
 }
 
 const authentication = asyncHandler(async (req,res,next) => {
-    const shopId = req.headers[HEADER.CLIEND_ID]
+    const shopId = req.headers[HEADER.CLIENT_ID]
     if(!shopId) throw new AuthFailureError("Invalid shopId header")
 
     const keyStore = await findByShopId({shopId})

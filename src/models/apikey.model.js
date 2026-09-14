@@ -8,7 +8,7 @@ const COLLECTION_NAME = 'ApiKeys'
 const apikeySchema = new Schema({
     key: {
         type: String,
-        require: true,
+        required: true,
         unique: true
     },
     status: {
@@ -17,7 +17,7 @@ const apikeySchema = new Schema({
     },
     permissions: {
         type: [String],
-        require: true,
+        required: true,
         enum: ['0000','1111','2222']
     }
 },{

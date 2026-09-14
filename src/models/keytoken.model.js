@@ -1,4 +1,4 @@
-'user strict'
+'use strict'
 
 const { Schema, model } = require('mongoose')
 
@@ -8,12 +8,12 @@ const COLLECTION_NAME = 'KeyTokens'
 const keyTokenSchema = new Schema({
     shop: {
         type: Schema.Types.ObjectId,
-        require: true,
+        required: true,
         ref: 'Shop'
     },
     publicKey: {
         type: String,
-        require: true
+        required: true
     },
     refreshTokensUsed: {
         type: Array,
@@ -21,7 +21,7 @@ const keyTokenSchema = new Schema({
     },
     refreshToken: {
         type: String,
-        require: true
+        required: true
     }
 }, {
     timestamps: true,
