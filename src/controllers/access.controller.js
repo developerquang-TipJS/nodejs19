@@ -5,7 +5,6 @@ const AccessService = require("../services/access.service")
 
 class AccessController {
     login = async (req, res, next) => {
-        console.log("controller login")
         new SuccessResponse({
             metadata: await AccessService.login(req.body)
         }).send(res)

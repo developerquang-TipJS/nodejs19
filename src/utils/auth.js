@@ -43,11 +43,11 @@ const authentication = asyncHandler(async (req,res,next) => {
     const accessToken = req.headers[HEADER.AUTHORIZATION]
     if(!accessToken) throw new AuthFailureError("Invalid accesstoken")
     const publicKeyObject = crypto.createPublicKey(keyStore.publicKey)
-    console.log('authentication: ',keyStore)
     try {
         const decodeShop = JWT.verify(accessToken,publicKeyObject)
         if(shopId !== decodeShop.shopId) throw new AuthFailureError("Invalid verify shopId")
         req.keyStore = keyStore
+        req.user = decodeShop
         return next()
     } catch (error) {
         next(error)

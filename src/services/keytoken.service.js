@@ -26,7 +26,6 @@ class KeytokenService {
                 new: true
             }
             const tokens = await keytokenModel.findOneAndUpdate(filter, update, options)
-            console.log("tokens::::::: ", tokens)
             return tokens ? tokens.publicKey : null
         } catch (error) {
             throw new BadRequestError("Error: create keyToken public failed!")

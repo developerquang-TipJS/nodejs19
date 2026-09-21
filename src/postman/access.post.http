@@ -49,19 +49,18 @@ POST {{url_dev}}/product
 Content-Type: application/json
 x-api-key: d22131361037905b74388a3215b5078b0de51a37c3190af24b973bcc4afc4b6e75b3ffeaea5e5fcd34245d8877df0eea20d43ab2c311bd7a530dc0a817df2afc
 x-client-id: 6aa3cdd741b461cb1c3eeb68
-authorization: eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzaG9wSWQiOiI2YWEzY2RkNzQxYjQ2MWNiMWMzZWViNjgiLCJlbWFpbCI6InNob3BxdWFuZ2RldkBnbWFpbC5jb20iLCJpYXQiOjE3ODk5Nzg2NjEsImV4cCI6MTc5MDE1MTQ2MX0.TVzMEELU9TgyuEzhThpf_l5Tngg7pLMbmJM1ejIfHv--_Z7gJaQsrm8Rii70mkNEpvqwuta0Y0zla1vtkqKt8WegBcHg4TOD1yUlDLh2MwOD6upI5N2B0ViKOtk6Y9fNMaIxyMSWEQMLT_UAYjbg7ZFKsz2PQhnfASlDbCDHRmjXlw5tFtjSO6I13nxbRY_A_vzQK5JmPRAQpUiVGxKTr596ZXMfuqUhmNspNmV_YKJP70flGbhfuJbSC4fe-rup-w2nIZ6ckk63jEo3ziDH22YFH2MAF30h2tGA-NlZN4ItI01u21tkStet4pK0y5lg6qKDCTqw-q1oHqWRNaKp4k4-sqd_ybDzNANZPJHxlSMI0VVnvfQ8L1Md7l4iv6XcfJgDmhTTZMGNsrbHApfTUfQBXyzN2_a2_st_2HlD7BcuV-7-sZ3wQJKGbDT0n4MP1ztYTEyjQDs2ELnKt0gwRBofX2NDiJxpNhzFQBjUQX7E7-sDmfTRAXQ2KdDQjevtZ7FpGdj_vGA7A7yfB5TNhvvWMU3Zc7DFAOU__ApkhUH2-mo90FcvovwfuuzRdF5rXQuRjRLxodkUvZ6fPCYwkmN1LWDLFNkJUmUqAkHTYIayjOthDgrF_yuQGmibsSTEOeRIV0oPOaU-iEkwavmRTtreIJZugN9_4LpHKiwnXVQ
+authorization: eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzaG9wSWQiOiI2YWEzY2RkNzQxYjQ2MWNiMWMzZWViNjgiLCJlbWFpbCI6InNob3BxdWFuZ2RldkBnbWFpbC5jb20iLCJpYXQiOjE3ODk5ODIyMzAsImV4cCI6MTc5MDE1NTAzMH0.RkfRYV4hyClm4dwiQ6SBssogZOM8iB228fD9zDQkxPyMxUhDI1XmsuOFLO_VmfydDGSdic_AEh_Ew2PMOrE_rt9ffhZYGv82ijHz-Kuk7lpQ4R3owTFoKGwMjJChtwSUQwGlEM7o34CV7bnCJA4nEfr-dzQJVHNNNVEjNKB_sxlVHWH9yJ-12qSF5rtYVwvnWHeH6vultdH_mOqwgymaKcAmNN1SfXnHy0o2qX9BOsDX3si2iMf_9TKSddqokY2w0GAzaI7jOYn6GT0UkxFK0Rv99u4PUZxRotVkYZfM_Pdchg_fgTaRWGyOyG_9AhRougHapUXUv70xwmxW-c2wHYSSGzfcivddehMnMtTb14xbGm5N5faWqtXhLv_AemvuUfDMl0RRs3VCpIr9TZp73Kbx3jXoWcw2BxjUePWr5n0LVbGILpRqC01wO4bZKoqmAM9L6Yy2b7pooNpnbetMTvMWS5Sc7c9qH20zV7JmZUmFY5Mi0KkpDivt7ruM8ajXKhj76XBxcPrEKkYbxktAtDmjNMYlf237rDBQ_ONI2y4dS57xC6luJ1qHg9EpVeHFmahAfULYP_kNt5I_2Mg55T1XJJQQ4hqtBZ-wgq2JAKz0nzDHx25jOYIcOfLi7hJoqnTqI-Q28Gef5lah3efsg4Tgsu1Lt8yz31PgMv4pYy4
 
 {
     "product_name" : "New Jeans",
     "product_thumb" : "product_thumb",
     "product_description" : "product_description High-quality denim jeans",
-    "product_price" : 60,
-    "product_quantity" : 5,
+    "product_price" : 608,
+    "product_quantity" : 51,
     "product_type" : "Clothing",
-    "product_shop" : "6aa3cdd741b461cb1c3eeb68",
     "product_attributes" : {
         "brand" : "adidas",
-        "size" : "L",
+        "size" : "M",
         "material" : "Denim"
     }
 
