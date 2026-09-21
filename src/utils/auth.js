@@ -5,7 +5,7 @@ const { BadRequestError, AuthFailureError, NotFoundError } = require('../core/er
 const { asyncHandler } = require('.')
 const {HEADER} = require('../const/index')
 const { findByShopId } = require('../services/keytoken.service')
-const crypto = require('crypto')
+const crypto = require('node:crypto')
 
 const createTokenPair = async (payload, puclicKey, privateKey) => {
     try {

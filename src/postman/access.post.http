@@ -6,8 +6,8 @@ Content-Type: application/json
 x-api-key: d22131361037905b74388a3215b5078b0de51a37c3190af24b973bcc4afc4b6e75b3ffeaea5e5fcd34245d8877df0eea20d43ab2c311bd7a530dc0a817df2afc
 
 {
-    "name" : "Shop QuangDev",
-    "email" : "shopquangdev@gmail.com",
+    "name" : "Shop QuangDev01",
+    "email" : "shopquangdev01@gmail.com",
     "password" : "quang1235613123"
 }
 
@@ -44,3 +44,25 @@ authorization: eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzaG9wSWQiOiI2YWEzY2RkNzQx
     "refreshToken" : "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzaG9wSWQiOiI2YWEzY2RkNzQxYjQ2MWNiMWMzZWViNjgiLCJlbWFpbCI6InNob3BxdWFuZ2RldkBnbWFpbC5jb20iLCJpYXQiOjE3ODkxMjA0OTcsImV4cCI6MTc4OTcyNTI5N30.VK95RvJsAmp1ePZvOXzHQQgPz6tD1Q0cv4F1jckd4nvEK_WzBeFaMGJaS8-yL0WYYy36Pbu_SpU6d2T4gMQCW1gklia3jK4tNag31JK01cPX0jJTel9xrSjX45UhcmZkuNQ1qxZhe8IiaquGQbpg-Jyk4zuKf9D-3e2NyV86wkujvhtCuq-5oIZk1WS3nXkxbfgDgqvKRxenpMitdGYg2nmm-A9Xi0TRPdPSdUvFqv7H_iEZJLOZGHOE9br47zYatomS-YoR5uKW2MKioiMTWGoegQyXjFRfG3i0b99xRlu9ytbV8RO4c1Ns9gZ7nZ3Fa_MkAjBcuFcchPm0kJ_G1yukX7j1g2_apHJK3zusKc-KkZ0ozl6glkz29CEbg0Tuzbtj15w1Z9w4bCE1Woya6jvCtKQd9OHdT2gSE8DIWLeky40bFBDbw4Qd64EWE5qBLneSGFR_1Dn0MATAeDKn49-0elWuT7pSfz0dhI43xVmDM_1kXIrAT8Tg7RHyLmEiB7ekPrR1dTL2T8Ng76grxkpfzjXvFCXv0kzmGm-BizmSc8GzjFhvKY9JQBQw4fnAAhk73VnFJdPA9la10kpr_iiJAoO9QTyZrTiQP1dGXmqt2FUp3RX3oyDG0S5xRjzEdYP-RgNsTIgEByhyw0jnOe-u5Atq_5dLlLJY9fiPsgo"
 }
 
+### create product
+POST {{url_dev}}/product
+Content-Type: application/json
+x-api-key: d22131361037905b74388a3215b5078b0de51a37c3190af24b973bcc4afc4b6e75b3ffeaea5e5fcd34245d8877df0eea20d43ab2c311bd7a530dc0a817df2afc
+x-client-id: 6aa3cdd741b461cb1c3eeb68
+authorization: eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzaG9wSWQiOiI2YWEzY2RkNzQxYjQ2MWNiMWMzZWViNjgiLCJlbWFpbCI6InNob3BxdWFuZ2RldkBnbWFpbC5jb20iLCJpYXQiOjE3ODk5Nzg2NjEsImV4cCI6MTc5MDE1MTQ2MX0.TVzMEELU9TgyuEzhThpf_l5Tngg7pLMbmJM1ejIfHv--_Z7gJaQsrm8Rii70mkNEpvqwuta0Y0zla1vtkqKt8WegBcHg4TOD1yUlDLh2MwOD6upI5N2B0ViKOtk6Y9fNMaIxyMSWEQMLT_UAYjbg7ZFKsz2PQhnfASlDbCDHRmjXlw5tFtjSO6I13nxbRY_A_vzQK5JmPRAQpUiVGxKTr596ZXMfuqUhmNspNmV_YKJP70flGbhfuJbSC4fe-rup-w2nIZ6ckk63jEo3ziDH22YFH2MAF30h2tGA-NlZN4ItI01u21tkStet4pK0y5lg6qKDCTqw-q1oHqWRNaKp4k4-sqd_ybDzNANZPJHxlSMI0VVnvfQ8L1Md7l4iv6XcfJgDmhTTZMGNsrbHApfTUfQBXyzN2_a2_st_2HlD7BcuV-7-sZ3wQJKGbDT0n4MP1ztYTEyjQDs2ELnKt0gwRBofX2NDiJxpNhzFQBjUQX7E7-sDmfTRAXQ2KdDQjevtZ7FpGdj_vGA7A7yfB5TNhvvWMU3Zc7DFAOU__ApkhUH2-mo90FcvovwfuuzRdF5rXQuRjRLxodkUvZ6fPCYwkmN1LWDLFNkJUmUqAkHTYIayjOthDgrF_yuQGmibsSTEOeRIV0oPOaU-iEkwavmRTtreIJZugN9_4LpHKiwnXVQ
+
+{
+    "product_name" : "New Jeans",
+    "product_thumb" : "product_thumb",
+    "product_description" : "product_description High-quality denim jeans",
+    "product_price" : 60,
+    "product_quantity" : 5,
+    "product_type" : "Clothing",
+    "product_shop" : "6aa3cdd741b461cb1c3eeb68",
+    "product_attributes" : {
+        "brand" : "adidas",
+        "size" : "L",
+        "material" : "Denim"
+    }
+
+}
