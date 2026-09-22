@@ -4,7 +4,7 @@ const JWT = require('jsonwebtoken')
 const { BadRequestError, AuthFailureError, NotFoundError } = require('../core/error.response')
 const { asyncHandler } = require('.')
 const {HEADER} = require('../const/index')
-const { findByShopId } = require('../services/keytoken.service')
+const { findByShopId, deleteById } = require('../services/keytoken.service')
 const crypto = require('node:crypto')
 
 const createTokenPair = async (payload, puclicKey, privateKey) => {
@@ -40,16 +40,21 @@ const authentication = asyncHandler(async (req,res,next) => {
     const keyStore = await findByShopId({shopId})
     if(!keyStore) throw new NotFoundError("Not found keyStore")
     
-    const accessToken = req.headers[HEADER.AUTHORIZATION]
-    if(!accessToken) throw new AuthFailureError("Invalid accesstoken")
-    const publicKeyObject = crypto.createPublicKey(keyStore.publicKey)
+    const refreshToken = req.headers[HEADER.REFRESHTOKEN]
+    if(!refreshToken) throw new AuthFailureError("Invalid refreshToken")
+    // const publicKeyObject = crypto.createPublicKey(keyStore.publicKey)
     try {
-        const decodeShop = JWT.verify(accessToken,publicKeyObject)
+        const decodeShop = JWT.verify(refreshToken,keyStore.publicKey)
         if(shopId !== decodeShop.shopId) throw new AuthFailureError("Invalid verify shopId")
         req.keyStore = keyStore
         req.user = decodeShop
+        req.refreshToken = refreshToken
         return next()
     } catch (error) {
+        if (keyStore.refreshTokensUsed.includes(refreshToken)) {
+            await deleteById(shopId)
+            return next(new BadRequestError('Something wrong happened !! please relogin'))
+        }
         next(error)
     }
 })

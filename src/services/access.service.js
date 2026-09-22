@@ -101,18 +101,15 @@ class AccessService {
         return delKey
     }
 
-    static handleRefreshToken = async (refreshToken) => {
-        const foundToken = await KeytokenService.findByRefreshTokenUsed(refreshToken)
-        if(foundToken) {
-            const {shopId,email} = await verifyJWT(refreshToken,foundToken.publicKey)
+    static handleRefreshToken = async ({refreshToken,user,keyStore}) => {
+        const {shopId,email} = user
+        if(keyStore.refreshTokensUsed.includes(refreshToken)) {
             await KeytokenService.deleteById(shopId)
             throw new BadRequestError('Something wrong happend !! pls relogin')
         }
-        const holderToken = await KeytokenService.findByRefreshToken(refreshToken)
-        if(!holderToken) throw new AuthFailureError('Shop is not registeted')
 
-        const {shopId,email} = await verifyJWT(refreshToken,holderToken.publicKey)
-
+        if(keyStore.refreshToken !== refreshToken) throw new AuthFailureError('Shop not registeted')
+        
         const foundShop = await findByEmail({email})
         if(!foundShop) throw new AuthFailureError('Shop is not registeted')
 
@@ -129,7 +126,7 @@ class AccessService {
         })
         const tokens = await createTokenPair({ shopId: shopId, email:email }, publicKey, privateKey)
         await KeytokenService.updateRefreshToken({
-            _id: holderToken._id,
+            _id: keyStore._id,
             publicKey,
             refreshToken: tokens.refreshToken,
             refreshTokenUsed: refreshToken
