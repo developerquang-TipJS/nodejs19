@@ -1,19 +1,31 @@
 'use strict'
 
 const { BadRequestError } = require('../core/error.response')
-const {product,clothing,electronic} = require('../models/product.model')
+const {product,clothing,electronic,furniture} = require('../models/product.model')
 
 // Definte Factory class to create product
 class ProductFactory {
+    static productRegistry = {}
+
+    static registerProductType(type,classRef) {
+        ProductFactory.productRegistry[type] = classRef
+    }
+
     static async createProduct(type,payload) {
-        switch(type){
-            case 'Electronic':
-                return new Electronic(payload).createProduct()
-            case 'Clothing':
-                return new Clothing(payload).createProduct()
-            default: 
-                throw new BadRequestError(`Invalid product type: ${type}`)
-        }
+        const productClass = ProductFactory.productRegistry[type]
+        if(!productClass) throw new BadRequestError(`Invalid product type: ${type}`)
+        
+        return new productClass(payload).createProduct()
+        // switch(type){
+        //     case 'Electronic':
+        //         return new Electronic(payload).createProduct()
+        //     case 'Clothing':
+        //         return new Clothing(payload).createProduct()
+        //     case 'Furniture':
+        //         return new Furniture(payload).createProduct()
+        //     default: 
+        //         throw new BadRequestError(`Invalid product type: ${type}`)
+        // }
     }
 }
 
@@ -66,5 +78,24 @@ class Electronic extends Product {
         return newProduct
     }
 }
+
+class Furniture extends Product {
+    async createProduct() {
+        const newFurniture = await furniture.create({
+            ...this.product_attributes,
+            product_shop: this.product_shop
+        })
+        if(!newFurniture) throw new BadRequestError('create new furniture error')
+
+        const newProduct = await super.createProduct(newFurniture._id)
+        if(!newProduct) throw new BadRequestError('create new product error')
+
+        return newProduct
+    }
+}
+
+ProductFactory.registerProductType('Electronic',Electronic)
+ProductFactory.registerProductType('Clothing',Clothing)
+ProductFactory.registerProductType('Furniture',Furniture)
 
 module.exports = ProductFactory

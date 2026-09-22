@@ -46,19 +46,20 @@ POST {{url_dev}}/product
 Content-Type: application/json
 x-api-key: d22131361037905b74388a3215b5078b0de51a37c3190af24b973bcc4afc4b6e75b3ffeaea5e5fcd34245d8877df0eea20d43ab2c311bd7a530dc0a817df2afc
 x-client-id: 6aa3cdd741b461cb1c3eeb68
-authorization: eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzaG9wSWQiOiI2YWEzY2RkNzQxYjQ2MWNiMWMzZWViNjgiLCJlbWFpbCI6InNob3BxdWFuZ2RldkBnbWFpbC5jb20iLCJpYXQiOjE3ODk5ODIyMzAsImV4cCI6MTc5MDE1NTAzMH0.RkfRYV4hyClm4dwiQ6SBssogZOM8iB228fD9zDQkxPyMxUhDI1XmsuOFLO_VmfydDGSdic_AEh_Ew2PMOrE_rt9ffhZYGv82ijHz-Kuk7lpQ4R3owTFoKGwMjJChtwSUQwGlEM7o34CV7bnCJA4nEfr-dzQJVHNNNVEjNKB_sxlVHWH9yJ-12qSF5rtYVwvnWHeH6vultdH_mOqwgymaKcAmNN1SfXnHy0o2qX9BOsDX3si2iMf_9TKSddqokY2w0GAzaI7jOYn6GT0UkxFK0Rv99u4PUZxRotVkYZfM_Pdchg_fgTaRWGyOyG_9AhRougHapUXUv70xwmxW-c2wHYSSGzfcivddehMnMtTb14xbGm5N5faWqtXhLv_AemvuUfDMl0RRs3VCpIr9TZp73Kbx3jXoWcw2BxjUePWr5n0LVbGILpRqC01wO4bZKoqmAM9L6Yy2b7pooNpnbetMTvMWS5Sc7c9qH20zV7JmZUmFY5Mi0KkpDivt7ruM8ajXKhj76XBxcPrEKkYbxktAtDmjNMYlf237rDBQ_ONI2y4dS57xC6luJ1qHg9EpVeHFmahAfULYP_kNt5I_2Mg55T1XJJQQ4hqtBZ-wgq2JAKz0nzDHx25jOYIcOfLi7hJoqnTqI-Q28Gef5lah3efsg4Tgsu1Lt8yz31PgMv4pYy4
+authorization: eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzaG9wSWQiOiI2YWEzY2RkNzQxYjQ2MWNiMWMzZWViNjgiLCJlbWFpbCI6InNob3BxdWFuZ2RldkBnbWFpbC5jb20iLCJpYXQiOjE3OTAwNjYzMDIsImV4cCI6MTc5MDIzOTEwMn0.qjruagyIP3XczGUSHEFg0hV6SOO_q1mGHZLEWSw6snulckDjGrMHUXa6nOKm7x2cX7e9BxYXCVadcgyEzYHT8R1a2mkhvMIRp-_bZ9Oo22rs819a_ZlgTQsVtKQJ6Lj4-SpI7A2BqNh2R51IGTvcvaTu7UsZs8s3-iT7VXPaxhKvorshzER_a_9ek0o9o0_X6jh3uRo33vWv5kTMVwQVHXujCPJo_LYbFm3sKIr87XyZ9m2K0x8uyDivSBsGEFCYBB5EpdArjVmyXAAIyNdksGTei19xwH2TLlOyJVUnYopYbE4RlzLC4FHQVNQrOBfXuJORYih2YB4YW1UkNImEFQWJBZKxVfVZ8a-kGtWA23bm48BAKTwShARTOlVEyuBFSSdZo6-ih05d-3HTESW9_GyxdL1kzrNbLAsSYZsnwyAhtJiMvP_Q92SBnTMMtquzvnQUr8DvzN0kbI_XkkWaf4xq-ikqRZBpYNg1WaNFzg-tmTudAeb-S7J-K7xA4eNK5nBglQ7h28C2mFm2rcY4CFnLWs_oBgNrYRwVm62cHvHpoiaFjHNaznSBq00COaNZhblS5rJzT6blM67dsWHlOISXmjdVCp_i2YaC2jTKXxLATfDegVI9HJXnyKodNtv6k8lVb8mcs33u5XaVh28CFgD7vs9QgM2OF84DnMtDE1Y
+x-rtoken-id: eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzaG9wSWQiOiI2YWEzY2RkNzQxYjQ2MWNiMWMzZWViNjgiLCJlbWFpbCI6InNob3BxdWFuZ2RldkBnbWFpbC5jb20iLCJpYXQiOjE3OTAwNjYzMDIsImV4cCI6MTc5MDY3MTEwMn0.Jtim2Befc9_6VXV0MKWGhwEFzbhvrDt_DEdIv1ko25dkAXKThdhdEciKplPZbu9gpUk-Z1fm16VmW9oFyKcNHvAf6X0qH-WUZDVe81J-WXEMl921_ojyPyJwrgnQN6-moc2A1Cj-5HKQFwm6cM5-Sa5TmzxwxUaMUlxYNbRn4xNL4i8xr93VInNNSuYoo3Y_SsD-Z75kaZfAohqXZ1Fs5_avijms2NcgPvnuoIFjpv_-cXv7g8mTFJMvoyZkokDbfgkmCB6BiakY1h2q5tBuJBzosfWOBJbPcJi7F1gQf7UxFF9sI4mCwbwrtxygtJ4_JRqYb2KPcczsMzV_tgzQtFW8kcougBXnbevjA2n7C6pKzgtp0Knf28iBRpGmFyFGyJrBdO9396k_c2bDxB89ji7kVNC4_0yJ2RfKVaaXy_pcVTh00bgoT2zYeOXB4d2LxYnIybHV04lFPLpEgCsI4bCanT7M3Aq4B-QeTQXTyWMKp3rV9Pa4aOTFBO_j4gyjO06Tu3arKwPZeJCE_Vb3g04qWRf_Q_tZ1jkBpZTmx_qC-vMYgk3iYz_frnH2hLLB3r0F0J8C7oeItyWAzYzO7i9U3YDmVC5HnhEwW74EW6H2Rnomw5pByhk8VGwnxOUM_XZdRCiXGIPKucB-gV8vIh7F7LXa2yy02LhgT5E7OhE
 
 {
-    "product_name" : "New Jeans",
-    "product_thumb" : "product_thumb",
-    "product_description" : "product_description High-quality denim jeans",
-    "product_price" : 608,
-    "product_quantity" : 51,
-    "product_type" : "Clothing",
+    "product_name" : "Furniture 1",
+    "product_thumb" : "product_thumb_Furniture",
+    "product_description" : "product_description High-quality Furniture",
+    "product_price" : 111,
+    "product_quantity" : 21,
+    "product_type" : "Furniture",
     "product_attributes" : {
         "brand" : "adidas",
-        "size" : "M",
-        "material" : "Denim"
+        "size" : "B",
+        "material" : "Furniture_material"
     }
 
 }
