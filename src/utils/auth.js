@@ -40,6 +40,19 @@ const authentication = asyncHandler(async (req,res,next) => {
     const keyStore = await findByShopId({shopId})
     if(!keyStore) throw new NotFoundError("Not found keyStore")
     
+    const accessToken = req.headers[HEADER.AUTHORIZATION]
+    if (accessToken) {
+        try {
+            const decodeShop = JWT.verify(accessToken, keyStore.publicKey)
+            if(shopId !== decodeShop.shopId) throw new AuthFailureError("Invalid verify shopId")
+            req.keyStore = keyStore
+            req.user = decodeShop
+            return next()
+        } catch (error) {
+            if (error.name !== 'TokenExpiredError') throw error
+        }
+    }
+
     const refreshToken = req.headers[HEADER.REFRESHTOKEN]
     if(!refreshToken) throw new AuthFailureError("Invalid refreshToken")
     // const publicKeyObject = crypto.createPublicKey(keyStore.publicKey)
